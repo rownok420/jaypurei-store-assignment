@@ -2,52 +2,69 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ranga store</title>
-  <link rel="stylesheet" href="./css/style.css" />
-  <!-- Latest compiled and minified CSS -->
-
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" /> -->
-
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joypurei Store</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- Latest compiled and minified CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 
-
-  <!-- google Montserrat  font  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
+    <!-- google Montserrat  font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
 </head>
 
 <body>
-    <header></header>
-    <main class="main">
-        <!-- <div class="search-field">
-            <div class="search-box">
-                <input id="input-field" class="search-field" type="text" />
-                <button type="button" class="btn btn-primary search-button" data-toggle="button" aria-pressed="false"
-                autocomplete="off" id="search-btn" onclick="loadProducts()">
-                Search
-                </button>
-            </div>
-        </div> -->
-
+    <header class="bg-light">
+        <section class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand fs-2 fw-bold" href="#">Joypurei Store</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Products</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Pricing</a>
+                            </li>
+                            <li style="cursor: pointer" class="nav-item" data-bs-toggle="modal" data-bs-target="#cart-items">
+                                <p class="nav-link">
+                                    <i class="block bi bi-cart-plus"></i>
+                                </p>
+                            </li>
+                        </ul>
+                  </div>
+                </div>
+            </nav>
+        </section>
+    </header>
+    <main class="main container">
+        <!-- search section hear -->
         <section class="container mt-4 mb-5 w-50">
             <div class="input-group mb-3">
-                <input id="input-field" type="text" class="rounded form-control me-2 p-2" placeholder="Searce food" aria-label="Recipient's username" aria-describedby="button-addon2">
+                <input id="input-field" type="text" class="rounded form-control me-2 p-2" placeholder="Search your products" aria-label="Recipient's username" aria-describedby="button-addon2">
                 <button id="search-btn" onclick="loadProducts()" class="btn btn-primary px-3 rounded" type="button">Search</button>
               </div>
         </section>
 
-        <div class="row container">
-            <div class="col-md-9 col-lg-9 col-sm-7">
-                <div id="all-products" class="">
-                    <!-- task -1 -->
+        <div class="row">
+            <!-- show all products -->
+            <div class="col-md-9 col-lg-9 col-6">
+                <div id="all-products" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                    
                 </div>
             </div>
-            <div class="col-md-3 col-lg-3 col-sm-5 cart-main">
+            <!-- show main cart  -->
+            <div class="col-md-3 col-lg-3 col-6 cart-main">
                 <div class="cart" id="my-cart">
                 <table class="table">
                     <thead>
@@ -92,7 +109,7 @@
                     </tbody>
                 </table>
                 <div class="parces text-center">
-                    <button class="btn btn-primary text-center">Buy Now</button>
+                    <button class="btn btn-primary text-center fw-bold text-white">Buy Now</button>
                 </div>
                 </div>
             </div>

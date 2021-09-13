@@ -17,18 +17,22 @@ const showProducts = (products) => {
 
         const image = product.image; // task 2
         const div = document.createElement("div");
-        div.classList.add("product");
+        div.classList.add("col","single-product");
         div.innerHTML = `
-        <div class="single-product">
-            <div>
-                <img class="product-image" src=${image}></img>
-            </div>
-            <h3>${product.title}</h3>
-            <p>Category: ${product.category}</p>
-            <h2>Price: $ ${product.price}</h2>
-            <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
-            <button id="details-btn" class="btn btn-danger">Details</button>
-        </div>
+            <div class="card h-100">
+                <div class="p-3">
+                    <img class="card-img-top product-image" src=${image}></img>
+                </div>
+                <div class="card-body">
+                <h5 class="card-title">${product.title}</h5>
+                <p>Category: ${product.category}</p>
+                <h2>Price: $ ${product.price}</h2>
+                </div>
+                <div class="card-footer text-center">
+                    <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-info fw-bold text-white">Add to cart</button>
+                    <button id="details-btn" class="btn btn-primary fw-bold text-white">Details</button>
+                </div>
+            </div>     
         `;
         document.getElementById("all-products").appendChild(div);
     }
@@ -88,9 +92,16 @@ const updateTotal = () => {
         getInputValue("total-tax");
     document.getElementById("total").innerText = grandTotal;
 };
+updateTotal()
 
 
-
-/* fetch('https://fakestoreapi.com/products/1')
-            .then(res=>res.json())
-            .then(json=>console.log(json)) */
+        //     <div class="single-product">
+        //     <div>
+        //         <img class="product-image" src=${image}></img>
+        //     </div>
+        //     <h3>${product.title}</h3>
+        //     <p>Category: ${product.category}</p>
+        //     <h2>Price: $ ${product.price}</h2>
+        //     <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
+        //     <button id="details-btn" class="btn btn-danger">Details</button>
+        // </div>
