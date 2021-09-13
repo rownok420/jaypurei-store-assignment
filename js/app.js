@@ -1,3 +1,4 @@
+// load products
 const loadProducts = () => {
     const url = `https://fakestoreapi.com/products`;
     fetch(url)
@@ -12,9 +13,7 @@ const showProducts = (products) => {
     const allProducts = products.map((pd) => pd);
 
     for (const product of allProducts) {
-
         // console.log(product)
-
         const image = product.image; // task 2
         const div = document.createElement("div");
         div.classList.add("col","single-product");
@@ -25,7 +24,9 @@ const showProducts = (products) => {
                 </div>
                 <div class="card-body">
                 <h5 class="card-title">${product.title}</h5>
-                <p>Category: ${product.category}</p>
+                <p class="mb-4">Category: ${product.category}</p>
+                <h5>Rating count: ${product.rating.count}</h5>
+                <h5>Average rating: ${product.rating.rate}</h5>
                 <h2>Price: $ ${product.price}</h2>
                 </div>
                 <div class="card-footer text-center">
