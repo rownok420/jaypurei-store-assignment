@@ -47,16 +47,16 @@ const showProducts = (products) => {
                 <div class="card-body">
                 <h5 class="card-title">${product.title}</h5>
                 <p>Category: ${product.category}</p>
-                <h3 class="text-muted">Price: $ ${product.price}</h3>
+                <h4 class="text-muted">Price: $ ${product.price}</h4>
                 </div>
-                <h5 class="text-center">Rating count: ${product.rating.count}</h5>
+                <h5 class="ms-3">Rating count: ${product.rating.count}</h5>
                 <div class="rating px-3 pb-3 text-center d-flex justify-content-between">
-                    <span>Rating:</span>
+                    <span>Rating rate:</span>
                     <span class="text-warning">${displayRateIcon(product.rating.rate)} <span class="text-secondary">(${product.rating.rate})</span></span>
                 </div>
-                <div class="btn-group card-footer text-center">
+                <div class="d-flex justify-content-between card-footer text-center">
                     <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-info fw-bold text-white">Add to cart</button>
-                    <button id="details-btn" class="btn btn-primary fw-bold text-white">Details</button>
+                    <button id="details-btn" class="btn btn-secondary fw-bold text-white">Details</button>
                 </div>
             </div>     
         `;
