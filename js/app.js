@@ -3,6 +3,25 @@ const loadProducts = () => {
     showProducts(data);
 };
 
+const displayRateIcon = (rate) => {
+    const floorRate = Math.floor(rate);
+    let rateIcon = "";
+  
+    for (let i = 0; i < floorRate; i++) {
+      rateIcon += `<i class="bi bi-star-fill"></i>`;
+    }
+    rateIcon += `<i class="bi bi-star-half"></i>`;
+  
+    if (5 - floorRate > 1) {
+      for (let i = 0; i < 5 - floorRate - 1; i++) {
+        rateIcon += `<i class="bi bi-star"></i>`;
+      }
+    }
+  
+    return rateIcon;
+};
+
+
 // show all product in UI 
 const showProducts = (products) => {
 
@@ -22,9 +41,10 @@ const showProducts = (products) => {
                 <p>Category: ${product.category}</p>
                 <h3 class="text-muted">Price: $ ${product.price}</h3>
                 </div>
-                <div class="rating px-3 pb-3">
-                    <i class="fas fa-star text-warning"></i>
-                    <span class="me-2 fw-bold">${product.rating.rate}(${product.rating.count})</span>
+                <h5 class="text-center">Rating count: ${product.rating.count}</h5>
+                <div class="rating px-3 pb-3 text-center d-flex justify-content-between">
+                    <span>Rating:</span>
+                    <span class="text-warning">${displayRateIcon(product.rating.rate)} <span class="text-secondary">(${product.rating.rate})</span></span>
                 </div>
                 <div class="btn-group card-footer text-center">
                     <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-info fw-bold text-white">Add to cart</button>
@@ -41,6 +61,7 @@ const addToCart = (id, price) => {
     updatePrice("price", price);
 
     updateTaxAndCharge();
+    updateTotal()
     document.getElementById("total-Products").innerText = count;
 };
 
@@ -78,8 +99,6 @@ const updateTaxAndCharge = () => {
         setInnerText("delivery-charge", 60);
         setInnerText("total-tax", priceConverted * 0.4);
     }
-    
-    updateTotal()
 };
 
 //grandTotal update function
