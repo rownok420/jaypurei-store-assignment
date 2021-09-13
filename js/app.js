@@ -61,6 +61,8 @@ const updatePrice = (id, value) => {
     const total = convertedOldPrice + convertPrice;
     // document.getElementById(id).innerText = Math.round(total);
     document.getElementById(id).innerText =(total).toFixed(2);
+
+    updateTotal()
 };
 
 // set innerText function
@@ -84,6 +86,8 @@ const updateTaxAndCharge = () => {
         setInnerText("delivery-charge", 60);
         setInnerText("total-tax", priceConverted * 0.4);
     }
+    
+    updateTotal()
 };
 
 //grandTotal update function
@@ -91,9 +95,9 @@ const updateTotal = () => {
     const grandTotal =
         getInputValue("price") + getInputValue("delivery-charge") +
         getInputValue("total-tax");
-    document.getElementById("total").innerText = grandTotal;
+    document.getElementById("total").innerText = grandTotal.toFixed(2);
 };
-updateTotal()
+
 
 
         //     <div class="single-product">
