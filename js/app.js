@@ -3,6 +3,8 @@ const loadProducts = () => {
     showProducts(data);
 };
 
+
+// display rating icon
 const displayRateIcon = (rate) => {
     const floorRate = Math.floor(rate);
     let rateIcon = "";
@@ -10,7 +12,12 @@ const displayRateIcon = (rate) => {
     for (let i = 0; i < floorRate; i++) {
       rateIcon += `<i class="bi bi-star-fill"></i>`;
     }
-    rateIcon += `<i class="bi bi-star-half"></i>`;
+  
+    if (rate !== floorRate) {
+      rateIcon += `<i class="bi bi-star-half"></i>`;
+    } else {
+      rateIcon += `<i class="bi bi-star"></i>`;
+    }
   
     if (5 - floorRate > 1) {
       for (let i = 0; i < 5 - floorRate - 1; i++) {
@@ -19,7 +26,8 @@ const displayRateIcon = (rate) => {
     }
   
     return rateIcon;
-};
+  };
+  
 
 
 // show all product in UI 
